@@ -83,7 +83,7 @@ timeZone.addEventListener("click", async (e) => {
   }
 
   favoritos = JSON.parse(localStorage.getItem("favoritos"));
-  console.log(favs);
+  console.log(favoritos);
 
   let posicion = favoritos.findIndex(function (e) {
     if (e == timeZone.innerText) {
