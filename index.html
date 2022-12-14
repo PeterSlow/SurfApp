@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600' rel='stylesheet' type='text/css'>
+
+  <title>Surf App</title>
+</head>
+
+<body>
+
+  <div class="container" id="container">
+    <nav id="navigation">
+
+      <div class="control-menu">
+        <a href="#navigation" class="open"><span>MENU</span></a>
+        <a href="#" class="close"><span>CERRAR</span></a>
+      </div>
+
+      <ul class="nav-items">
+        <li id="Comentarios"><a href="indexComents.html"><span>Opiniones</span></a></li>
+      </ul>
+
+    </nav>
+    <div class="inputTemp">
+      <form class="search_submit" id="search_submit">
+        <input type="text" class="search" id="search_input" placeholder="Introduzca localidad...">
+        <button type="submit"></button>
+      </form>
+      <div class="inputTemp_number">
+        <div class="inputTemp_celsius" id="degreeNumber">15</div>
+        <div class="inputTemp_symbol">ºC</div>
+      </div>
+      <div id="weatherIcon"></div>
+      <div class="inputTemp_description" id="description">Nuboso</div>
+    </div>
+
+    <div class="location">
+      <div class="location_city" id="timezone">London<p id="favoritos">&#10025;</p>
+      </div>
+      <div class="location_date" id="date">fecha</div>
+    </div>
+    <div class="weather">
+      <div class="weather_min"><small>min</small><span class="min">12</span> ºC</div>
+      <div class="weather_max"><small>max</small><span class="max">18</span> ºC</div>
+    </div>
+    <select id="ciudades" class="ciudades">
+    </select>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

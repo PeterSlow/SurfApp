@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**Proporciones del container adaptada a telefono **/
+.container {
+  width: 15rem;
+  height: 32.5rem;
+  border: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  -webkit-box-shadow: 7px 7px 5px 0px rgb(50, 50, 50, 0.29);
+  -moz-box-shadow: 7px 7px 5px 0px rgb(50, 50, 50, 0.29);
+  box-shadow: 7px 7px 5px 0px rgb(50, 50, 50, 0.29);
+}
+
+/**Propiedades de la clase dia**/
+.container.day {
+  background-image: url("./gif/sunday.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/**Propiedades de la clase noche**/
+.container.night {
+  background-image: url("./gif/nightday.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container.night .inputTemp_description {
+  color: white;
+}
+
+.container.night .location_city {
+  color: white;
+}
+
+.weather_min,
+.weather_max {
+  color: rgb(255, 255, 255);
+}
+
+.container.night .location_date {
+  color: white;
+  font-weight: bolder;
+}
+
+.container.night .inputTemp_celsius,
+.container.night .inputTemp_symbol {
+  color: white;
+}
+
+/**Propiedades de la clase cloud**/
+.container.cloud {
+  background-image: url("./gif/cloudday.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/**Propiedades de clase rain**/
+.container.rain {
+  background-image: url("./gif/rainday.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container.rain .inputTemp_description {
+  color: rgb(155, 155, 155);
+}
+
+.container.rain .location_city {
+  color: rgb(155, 155, 155);
+}
+
+.container.rain .location_date {
+  color: rgb(155, 155, 155);
+  font-weight: bolder;
+}
+
+/**Propiedades para alinear la temperatura**/
+.inputTemp {
+  margin: 1rem auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0.4;
+}
+
+/**Propiedades del input de busqueda**/
+.search_submit {
+  display: flex;
+}
+
+.search_submit>button {
+  visibility: hidden;
+}
+
+.search {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: .5rem;
+  border: none;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.inputTemp_number {
+  display: flex;
+  align-items: center;
+}
+
+/**Propiedades de grados**/
+.inputTemp_celsius {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  font-size: 4rem;
+}
+
+.inputTemp_symbol {
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+}
+
+/**Propiedades localizacion**/
+.location {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.location_date {
+  margin: 1.5rem;
+}
+
+.inputTemp_description,
+.location_city {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: #333;
+}
+
+/**Propiedades de weather min y max**/
+.weather {
+  flex: 0.1;
+  border-top: 2px solid #333;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather_min>span {
+  font-size: 1.4rem;
+  color: blue
+}
+
+.weather_max>span {
+  font-size: 1.4rem;
+  color: orangered;
+}
+
+
+/**Estilos de menu de navegacion**/
+ul.nav-items {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out 0s, background-color 2s ease 0s;
+}
+
+#navigation:target .nav-items {
+
+  height: 5em;
+  transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+}
+
+/*Al hacer click sobre el enlace que abre el menú este desaparece*/
+
+.close {
+  display: none;
+}
+
+#navigation:target .open {
+  display: none;
+}
+
+/*Al hacer click sobre el enlace que abre el menu aparece el enlace .close que previamente estaba oculto*/
+
+#navigation:target .close {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: outside none none;
+}
+
+.control-menu {
+  background-color: transparent;
+  background-position: center center;
+  display: block;
+  float: center;
+  height: 40px;
+  margin-right: 20em;
+  width: 40px;
+}
+
+.control-menu a span {
+  display: inline-block;
+  height: 40px;
+  text-indent: -9999px;
+  width: 40px;
+}
+
+.control-menu .close {
+  background-image: url("img/close-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+.control-menu .open {
+  background-image: url("img/open-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+ul.nav-items {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out 0s, background-color 2s ease 0s;
+  /*El menú cambia su altura y su color de fondo mediante una transición suavizada al voover a su estado unicial*/
+}
+
+#navigation:target ul.nav-items {
+  background: none repeat scroll 0 0;
+  height: 4em;
+  transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+  /*El menú cambia su altura y su color de fondo mediante una transición suavizada al abrirse*/
+}
+
+
+/*Al hacer clic sobre el enlace que abre el menú éste desaparece*/
+
+.close {
+  display: none;
+}
+
+#navigation:target .open {
+  display: none;
+}
+
+/* Al hacer clic sobre el enlace que abre el menú aparece el enlace .close que previamente estaba oculto*/
+
+#navigation:target .close {
+  display: block;
+}
+
+/*Estilos menu*/
+
+ul.nav-items li {
+  display: block;
+}
+
+ul.nav-items a {
+  border-top: 2px dotted #dddbdb;
+  color: #333;
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  margin: 0 1.3em;
+}
+
+ul.nav-items li:first-child a {
+  border-top: 2px solid transparent;
+}
+
+ul.nav-items li a span {
+  border-left: 3px solid;
+  height: 3.2em;
+  padding: 0.4em 0.5em;
+}
+
+#Tiempo a span {
+  border-color: #ff6633;
+}
+
+#Comentarios a span {
+  border-color: #bda94d;
+}

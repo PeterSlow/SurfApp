@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Avenir;
+  color: rgba(0, 0, 0, 0.70);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/**Proporciones del container adaptada a telefono **/
+.containerComents {
+  background-image: ;
+  width: 15rem;
+  height: 32.5rem;
+  border: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  -webkit-box-shadow: 7px 7px 5px 0px rgb(50, 50, 50, 0.29);
+  -moz-box-shadow: 7px 7px 5px 0px rgb(50, 50, 50, 0.29);
+  box-shadow: 7px 7px 5px 0px rgb(50, 50, 50, 0.29);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.items {
+  list-style: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.items li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 5;
+  display: flex;
+  font-size: 15px;
+}
+
+.items label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.items input {
+  display: none;
+}
+
+.items input+label:before {
+  content: '⬜️';
+  margin-right: 5px;
+}
+
+.items input:checked+label:before {
+  content: '🚀';
+}
+
+.addItems {
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.addItems input {
+  width: 200px;
+  height: 20px;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgb(7, 39, 39);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input::placeholder {
+  color: rgb(7, 39, 39);
+}
+
+input[type='submit'] {
+  box-shadow: 3px 4px rgba(53, 53, 53, 0.349);
+}
+
+span {
+  cursor: pointer;
+}
+
+/**Estilos de menu de navegacion**/
+ul.nav-items {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out 0s, background-color 2s ease 0s;
+}
+
+#navigation:target .nav-items {
+
+  height: 5em;
+  transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+}
+
+/*Al hacer click sobre el enlace que abre el menú este desaparece*/
+
+.close {
+  display: none;
+}
+
+#navigation:target .open {
+  display: none;
+}
+
+/*Al hacer click sobre el enlace que abre el menu aparece el enlace .close que previamente estaba oculto*/
+
+#navigation:target .close {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: outside none none;
+}
+
+.control-menu {
+  background-color: transparent;
+  background-position: center center;
+  display: block;
+  float: center;
+  height: 40px;
+  margin-right: 20em;
+  width: 40px;
+}
+
+.control-menu a span {
+  display: inline-block;
+  height: 40px;
+  text-indent: -9999px;
+  width: 40px;
+}
+
+.control-menu .close {
+  background-image: url("img/close-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+.control-menu .open {
+  background-image: url("img/open-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+ul.nav-items {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out 0s, background-color 2s ease 0s;
+  /*El menú cambia su altura y su color de fondo mediante una transición suavizada al voover a su estado unicial*/
+}
+
+#navigation:target ul.nav-items {
+  background: none repeat scroll 0 0;
+  height: 8em;
+  transition: height 0.4s ease-in-out 0s, background-color 0.9s ease 0s;
+  /*El menú cambia su altura y su color de fondo mediante una transición suavizada al abrirse*/
+}
+
+
+/*Al hacer clic sobre el enlace que abre el menú éste desaparece*/
+
+.close {
+  display: none;
+}
+
+#navigation:target .open {
+  display: none;
+}
+
+/* Al hacer clic sobre el enlace que abre el menú aparece el enlace .close que previamente estaba oculto*/
+
+#navigation:target .close {
+  display: block;
+}
+
+/*Estilos menu*/
+
+ul.nav-items li {
+  display: block;
+}
+
+ul.nav-items a {
+  border-top: 2px dotted #dddbdb;
+  color: #333;
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  margin: 0 1.3em;
+}
+
+ul.nav-items li:first-child a {
+  border-top: 2px solid transparent;
+}
+
+ul.nav-items li a span {
+  border-left: 3px solid;
+  height: 3.2em;
+  padding: 0.4em 0.5em;
+}
+
+#Tiempo a span {
+  border-color: #ff6633;
+}
+
+#Comentarios a span {
+  border-color: #bda94d;
+}
