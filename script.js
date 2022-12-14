@@ -61,7 +61,7 @@ const displayData = (obj) => {
 
   //Obtener icono
   const icon = obj.weather[0].icon;
-  weatherIcon.innerHTML = `<img src='icons/${icon}.png'></img>`
+  weatherIcon.innerHTML = `<img src='./icons/${icon}.png'></img>`
   //Obtener temperatura maxima y minima hacia abajo
   max.textContent = Math.floor(obj.main.temp_max);
   min.textContent = Math.floor(obj.main.temp_min);
@@ -71,10 +71,49 @@ const displayData = (obj) => {
 
 }
 
+function setFavs() {
+
+  if (localStorage.getItem("favoritos") == undefined) {
+    localStorage.setItem("favoritos", timeZone.textContent)
+  } else {
+    let favoritos = localStorage.getItem("favoritos").split(";")
+    let existe = false
+
+    for (let i = 0; i < favoritos.length; i++) {
+      if (favoritos[i] == timeZone.textContent) {
+        existe = true;
+      }
+    }
+
+    if (existe) {
+      let borrar = "";
+      for (let i = 0; i < favoritos.length; i++) {
+        if (favoritos[i] == timeZone.textContent) {
+
+        } else {
+          if (i == 0) {
+            borrar = favoritos[i]
+          } else {
+            borrar = borrar + ";" + favoritos[i]
+          }
+        }
+      }
+      localStorage.setItem("favoritos", borrar)
+
+      if (favoritos.length == 1) {
+        localStorage.removeItem("favoritos")
+      }
+
+    } else {
+      localStorage.setItem("favoritos", localStorage.getItem("favoritos") + ";" + timeZone.textContent)
+    }
+  }
+}
+
 //Añadir a favoritos
 timeZone.addEventListener("click", async (e) => {
-
-  let favoritos = [];
+  setFavs(timeZone.textContent);
+  /**let favoritos = [];
   if (!localStorage.getItem("favoritos") || JSON.parse(localStorage.getItem("favoritos")).length == 0) {
     let favs = new Array(timeZone.textContent);
     localStorage.setItem("favoritos", JSON.stringify(favs));
